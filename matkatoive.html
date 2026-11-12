@@ -18,49 +18,51 @@
         </div>
     </header>
     <main>
-        <!--teksti ja kuva gridillä-->
-        <section class="esittely">
-            <img class="kortti-kuva" src="images/blandinejoannic-cupcakes-5116009.webp" alt="leivos" width="1280" height="800">
-            <div>
-                <p>Pieni tauko hyvän leivoksen seurassa</p>
-                <h1>Piipahda kahville</h1>
-                <a href="#leivokset">Tutustu leivoksiin</a>
-            </div>
-        </section>
-        <section id="leivokset">
-            <p class="ylateksti">Löydä oma hetkesi</p>
-            <h2>Kolme tapaa nauttia elämästä</h2>
-            <!--grid-->
-            <div class="kortit">
-                <article class="kortti kortti-iso">
-                    <img class="kortti-kuva" src="" alt="kuppikakku" width="1920">
-                    <div class="kortti-teksti">
-                        <p class="ylateksti">Ihania kuppikakkuja</p>
-                        <h3>Rauhallinen aamu</h3>
-                        <a class="korttilinkki" href="#yhteys">Kysy lisää</a>
+        <h1 class="keskitetty">Lähetä matkatoiveesi</h1>
+        <p class="keskitetty">Täytä alla oleva lomake</p>
+        <section class="topics" id="contact">
+            <div class="container">
+
+                <h2 class="keskitetty">Contact Us</h2>
+
+                <form class="card" action="https://httpbin.org/post" method="post">
+
+                    <div class="form-row keskitetty">
+                        <label for="email">Sähköposti*</label>
+                        <input type="email" id="email" name="email" required maxlength="120" />
                     </div>
-                </article>
-                <article class="kortti-yla">
-                    <img class="kortti-kuva" src="" alt="kuppikakku" width="1920">
-                    <div class="kortti-teksti">
-                        <p class="ylateksti">Ihania kuppikakkuja</p>
-                        <h3>Hetki ilman kiireitä</h3>
-                        <a class="korttilinkki" href="#yhteys">Kysy lisää</a>
+
+                    <div class="form-row keskitetty">
+                        <label for="subject">Matka tapa*</label>
+                        <select id="subject" name="subject" required>
+                            <option value="" disabled selected></option>
+                            <option value="juna">Juna</option>
+                            <option value="laiva">Laiva</option>
+                            <option value="lentokone">Lentokone</option>
+                        </select>
                     </div>
-                </article>
-                <article class="kortti-ala">
-                    <img src="" alt="kuppikakku" width="1920">
-                    <div class="kortti-teksti">
-                        <p class="ylateksti">Ihania kuppikakkuja</p>
-                        <h3>Rauhallinen aamu</h3>
-                        <a class="korttilinkki" href="#yhteys">Kysy lisää</a>
+
+                    <div class="form-row keskitetty">
+                        <label for="date">Lähtöpäivä*</label>
+                        <input type="date" required value="date" name="date">
                     </div>
-                </article>
+
+                    <div class="form-row keskitetty">
+                        <label for="number">Matkustajien määrä*</label>
+                        <input id="number" name="number" required></input>
+                    </div>
+
+                    <button class="nappi" type="submit">Send</button>
+                </form>
             </div>
         </section>
     </main>
     <footer>
-
+        <div class="footer-content">
+            <p>Matkayhtiö</p>
+            <p>|</p>
+            <p>Puh: 123 456 7890</p>
+        </div>
     </footer>
 </body>
 </html>

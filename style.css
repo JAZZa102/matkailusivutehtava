@@ -7,8 +7,8 @@
 /*muuttujien määrittely*/
 :root{
     --tausta: rgb(235, 235, 235);
-    --teksti: rgb(39, 39, 39);
-    --pinkki: rgb(255, 113, 201);
+    --teksti: rgb(15, 15, 15);
+    --sini: rgba(113, 250, 255, 0.5);
 }
 
 html{
@@ -37,7 +37,7 @@ img{
 
 /*header*/
 .header{
-    border-bottom: 1px solid lightpink;
+    border-bottom: 1px solid lightblue;
 }
 
 .header-content{
@@ -109,7 +109,7 @@ nav a{
     display: flex;
     min-width: 0;
     overflow: hidden;
-    background-color: var(--pinkki);
+    background-color: var(--sini);
 }
 
 .kortti-iso{
@@ -145,12 +145,13 @@ nav a{
     padding: 20px;
 }
 
-.kortti-teksti p{
+.kortti-teksti p, .kortti-teksti h3{
     margin-top: 0;
+    background-color: var(--sini);
 }
 
 .korttilinkki{
-
+    text-decoration: solid;
 }
 
 details{
@@ -159,8 +160,39 @@ details{
     background-color: aquamarine;
 }
 
+.footer-content{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    padding: 20px;
+}
+
 .accordion{
     margin: 40px;
+}
+
+.keskitetty{
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+.nappi{
+    margin-left: 50%;
 }
 
 /*virheilmoitus*/
