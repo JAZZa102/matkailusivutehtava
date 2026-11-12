@@ -1,0 +1,198 @@
+/*perusasetukset*/
+
+*{
+    box-sizing: border-box;
+}
+
+/*muuttujien määrittely*/
+:root{
+    --tausta: rgb(235, 235, 235);
+    --teksti: rgb(39, 39, 39);
+    --pinkki: rgb(255, 113, 201);
+}
+
+html{
+    scroll-padding-top: 24px;
+}
+
+body{
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    background-color: var(--tausta);
+    color: var(--teksti);
+}
+
+main{
+    flex: 1;
+}
+
+img{
+    display: block;
+    max-width: 100%;
+}
+
+/*header*/
+.header{
+    border-bottom: 1px solid lightpink;
+}
+
+.header-content{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    padding: 20px;
+}
+
+.logo{
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+nav{
+    display: flex;
+    gap: 24px;
+}
+
+nav a{
+    text-decoration: none;
+}
+
+.rajaus{
+    width: min(1100px, calc(100% - 32%));
+    margin-inline: auto;
+}
+
+/*esittely*/
+
+.esittely{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 40px;
+    padding-block: 50px;
+}
+
+.esittely img{
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+}
+
+/*kolmen kuvan section*/
+
+.ylateksti{
+    text-transform: uppercase;
+    letter-spacing: .12em;
+    font-size: .75rem;
+    font-weight: bold;
+}
+
+.kortit{
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+    "yla iso"
+    "ala iso";
+    gap: 24px;
+}
+
+.kortti{
+    position: relative;
+    display: flex;
+    min-width: 0;
+    overflow: hidden;
+    background-color: var(--pinkki);
+}
+
+.kortti-iso{
+    grid-area: iso;
+    aspect-ratio: 4/6;
+}
+
+.kortti-yla{
+    grid-area: yla;
+}
+
+.kortti-ala{
+    grid-area: ala;
+}
+
+.kortti-kuva{
+    object-fit: cover;
+}
+
+.kortti > .kortti-kuva{
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.kortti-teksti{
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 20px;
+}
+
+.kortti-teksti p{
+    margin-top: 0;
+}
+
+.korttilinkki{
+
+}
+
+details{
+    margin-bottom: 12px;
+    border: 1px solid lime;
+    background-color: aquamarine;
+}
+
+.accordion{
+    margin: 40px;
+}
+
+/*virheilmoitus*/
+
+.virhe{
+    display: none;
+    color: red;
+    margin: 6px;
+    font-size: 0.9rem;
+}
+
+input:user-invalid{
+    border: 2px solid red;
+}
+input:user-invalid + .virhe{
+    display: block;
+}
+
+@media (width <900px){
+    .esittely{
+        grid-template-columns: 1fr;
+    }
+
+    .kortit{
+        grid-template-areas: 
+        "iso iso"
+        "yla ala";
+        grid-template-rows: auto auto;
+    }
+
+    .kortti-iso{
+        aspect-ratio: 3/2;
+    }
+    .kortti-yla, .kortti-ala {aspect-ratio: 4/3;}
+}
